@@ -1,0 +1,22 @@
+name: Email-Step-Demo
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 👇 Step name contains your email exactly as required
+      - name: 24ds1000057@ds.study.iitm.ac.in
+        run: echo "Hello, world! Action with email step name."
+
+      - name: Print context
+        run: |
+          echo "Repo: $GITHUB_REPOSITORY"
+          echo "Ref: $GITHUB_REF"
